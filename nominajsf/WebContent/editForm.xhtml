@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Actualizar Empleado</title>
+</h:head>
+<h:body>
+
+	<b:navBar brand="Administracion de Nomina" brandHref="#" inverse="true">
+	 <b:navbarLinks>
+			<b:navLink value="Home" outcome="index.xhtml"></b:navLink>
+			<b:navLink value="Menu" outcome="index.xhtml"></b:navLink>
+			<b:navLink value="Empleados" outcome="index.xhtml"></b:navLink>
+		</b:navbarLinks>
+	</b:navBar>
+	<h:form>
+		<h:panelGrid columns="2" cellspacing="20" border="1">
+			<f:facet name="header">
+				<h:outputText value="Actualizar empleado"></h:outputText>
+			</f:facet>
+
+			<h:outputText value="Codigo"></h:outputText>
+			<h:inputText value="#{empleado.codigo}"></h:inputText>
+
+			<h:outputText value="Nombre"></h:outputText>
+			<h:inputText value="#{empleado.nombre}"></h:inputText>
+
+			<h:outputText value="Cedula"></h:outputText>
+			<h:inputText value="#{empleado.cedula}"></h:inputText>
+
+			<h:outputText value="Fecha ingreso"></h:outputText>
+			<h:inputText value="#{empleado.fechaIngreso}">
+				<f:convertDateTime pattern="yyyy-mm-dd" />
+			</h:inputText>
+
+
+			<h:outputText value="Fecha Nacimiento"></h:outputText>
+			<h:inputText value="#{empleado.fechaNacimiento}">
+				<f:convertDateTime pattern="yyyy-mm-dd" />
+			</h:inputText>
+
+
+			<h:outputText value="Fecha retiro"></h:outputText>
+			<h:inputText value="#{empleado.fechaRetiro}">
+				<f:convertDateTime pattern="yyyy-mm-dd" />
+			</h:inputText>
+			<!--    <f:convertDateTime pattern = "dd-mm-yyyy" /> -->
+			<!-- 		<h:outputText value="fecha Ingreso"></h:outputText>
+			<h:inputText value="#{empleado.fechaIngreso}"></h:inputText>
+
+			<h:outputText value="Fecha nacimiento "></h:outputText>
+			<h:inputText value="#{empleado.fechaNacimiento}"></h:inputText>
+
+			<h:outputText value="fecha retiro"></h:outputText>
+			<h:inputText value="#{empleado.fechaRetiro}"></h:inputText> -->
+
+			<f:facet name="footer">
+				<h:commandButton action="#{empleadoBean.actualizar(empleado)}"
+					value="Guardar"></h:commandButton>
+
+
+
+
+				<h:link value="Volver" look="default"  outcome="index" />
+			</f:facet>
+
+		</h:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>
